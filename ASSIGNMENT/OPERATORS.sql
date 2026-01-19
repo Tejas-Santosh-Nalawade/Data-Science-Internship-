@@ -1,0 +1,75 @@
+-- Display Whole Table
+SELECT * FROM EMPLOYEE;
+
+-- Arithmetic Operator
+
+-- Increase salary by 1000
+SELECT EMP_ID, SALARY + 1000 AS NEW_SALARY
+FROM EMPLOYEE;
+
+-- Annual salary
+SELECT EMP_ID, SALARY * 12 AS ANNUAL_SALARY
+FROM EMPLOYEE;
+
+-- Logical Operator
+
+-- Salary > 10000 AND department 90
+SELECT * FROM EMPLOYEE
+WHERE SALARY > 10000 AND DEPARTMENT_ID = 90;
+
+-- DEPARTMENT_ID 60 OR 90
+SELECT * FROM EMPLOYEE
+WHERE DEPARTMENT_ID = 60 OR DEPARTMENT_ID = 90;
+
+
+-- Comparison (Relational) Operators
+
+-- Employees not from department 90
+SELECT * FROM EMPLOYEE
+WHERE DEPARTMENT_ID <> 90;
+
+-- Employees with salary greater than 10000
+SELECT * FROM EMPLOYEE
+WHERE SALARY > 10000;
+
+
+--Concatenation Operator
+
+-- Full name
+SELECT FIRST_NAME || ' ' || LAST_NAME AS FULL_NAME
+FROM EMPLOYEE;
+
+--Special Operator
+
+--Between 
+-- Salary between 5000 and 10000
+SELECT * FROM EMPLOYEE
+WHERE SALARY BETWEEN 5000 AND 10000;
+
+-- First name ends with 'n'
+SELECT * FROM EMPLOYEE
+WHERE FIRST_NAME LIKE '%n';
+
+
+--Set Operation
+
+-- Employees from department 60 and 90
+SELECT EMP_ID FROM EMPLOYEE WHERE DEPARTMENT_ID = 60
+UNION
+SELECT EMP_ID FROM EMPLOYEE WHERE DEPARTMENT_ID = 90;
+
+
+-- Employees who are in department 90 AND earn more than 10000
+SELECT EMP_ID FROM EMPLOYEE WHERE DEPARTMENT_ID = 90
+INTERSECT
+SELECT EMP_ID FROM EMPLOYEE WHERE SALARY > 10000;
+
+
+
+
+
+
+
+
+
+
